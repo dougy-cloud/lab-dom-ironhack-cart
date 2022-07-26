@@ -4,12 +4,12 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
   const price = product.querySelector('.price span').innerHTML;
   const quantity = product.querySelector('.quantity input').value;
-  const totalPrice = price*quantity
-  const subTotal = product.querySelector('.subtotal span')
-  subTotal.innerHTML = totalPrice
-  return totalPrice
+  const subTotal = price*quantity
+  const subTotalCell = product.querySelector('.subtotal span')
+  subTotalCell.innerHTML = subTotal
+  return subTotal
 }
-
+//redo the first iteration with help from Ece
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
@@ -20,9 +20,17 @@ function calculateAll() {
 
   // ITERATION 2
  const products = document.getElementsByClassName('product');
-/* for (element of products){
-  updateSubtotal(element)
-}*/
+
+ // another way to achieve it
+/* let total = 0;
+ let rows = document.querySelectorAll(".product");
+
+ rows.forEach(function (product) {
+   let subTotal = updateSubtotal(product);
+   total += subTotal;
+ }) */
+
+// I used for...of while Ece used for each!
 
   // ITERATION 3
   let sum = 0
